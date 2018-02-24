@@ -7,12 +7,15 @@ import { InputTextModule }  from 'primeng/inputtext';
 import { ButtonModule }  from 'primeng/button';
 import { TableModule }  from 'primeng/table';
 import { DialogModule }  from 'primeng/dialog';
+import {TabViewModule} from 'primeng/tabview';
 
 import { AppComponent } from './app.component';
+import { TableContentComponent } from './table-content/table-content.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        TableContentComponent
     ],
     imports: [
         BrowserModule,
@@ -22,7 +25,8 @@ import { AppComponent } from './app.component';
         HttpClientModule,
         InputTextModule,
         DialogModule,
-        ButtonModule
+        ButtonModule,
+        TabViewModule
     ],
     providers: [],
     bootstrap: [AppComponent]
