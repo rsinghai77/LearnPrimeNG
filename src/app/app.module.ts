@@ -8,14 +8,19 @@ import { ButtonModule }  from 'primeng/button';
 import { TableModule }  from 'primeng/table';
 import { DialogModule }  from 'primeng/dialog';
 import {TabViewModule} from 'primeng/tabview';
+import {EditorModule} from 'primeng/editor';
 
 import { AppComponent } from './app.component';
 import { TableContentComponent } from './table-content/table-content.component';
+import { InputContentComponent } from './input-content/input-content.component';
+import { TextEditorComponent } from './text-editor/text-editor.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        TableContentComponent
+        TableContentComponent,
+        InputContentComponent,
+        TextEditorComponent
     ],
     imports: [
         BrowserModule,
@@ -26,7 +31,8 @@ import { TableContentComponent } from './table-content/table-content.component';
         InputTextModule,
         DialogModule,
         ButtonModule,
-        TabViewModule
+        TabViewModule,
+        EditorModule
     ],
     providers: [],
     bootstrap: [AppComponent]

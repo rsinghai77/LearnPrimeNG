@@ -1,13 +1,13 @@
 <h1>Welcome to {{title}}</h1>
 
 <p-tabView orientation="top">
+    <p-tabPanel header="Input Content">
+        <app-input-content></app-input-content>
+    </p-tabPanel>
+    <p-tabPanel header="Text Editor">
+        <app-text-editor></app-text-editor>
+    </p-tabPanel>
     <p-tabPanel header="Table Content">
        <app-table-content></app-table-content>
-    </p-tabPanel>
-    <p-tabPanel header="Tab 2">
-        Content 2
-    </p-tabPanel>
-    <p-tabPanel header="Tab 3">
-        Content 3    
     </p-tabPanel>
 </p-tabView>
