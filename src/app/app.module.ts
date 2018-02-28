@@ -3,10 +3,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { InputTextModule }  from 'primeng/inputtext';
-import { ButtonModule }  from 'primeng/button';
-import { TableModule }  from 'primeng/table';
-import { DialogModule }  from 'primeng/dialog';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/dialog';
 import {TabViewModule} from 'primeng/tabview';
 import {EditorModule} from 'primeng/editor';
 
@@ -14,13 +14,16 @@ import { AppComponent } from './app.component';
 import { TableContentComponent } from './table-content/table-content.component';
 import { InputContentComponent } from './input-content/input-content.component';
 import { TextEditorComponent } from './text-editor/text-editor.component';
+import { InventoryComponent } from './inventory/inventory.component'
+import {InputMaskModule} from 'primeng/inputmask';
 
 @NgModule({
     declarations: [
         AppComponent,
         TableContentComponent,
         InputContentComponent,
-        TextEditorComponent
+        TextEditorComponent,
+        InventoryComponent
     ],
     imports: [
         BrowserModule,
@@ -32,7 +35,8 @@ import { TextEditorComponent } from './text-editor/text-editor.component';
         DialogModule,
         ButtonModule,
         TabViewModule,
-        EditorModule
+        EditorModule,
+        InputMaskModule
     ],
     providers: [],
     bootstrap: [AppComponent]

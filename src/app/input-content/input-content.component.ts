@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputContentComponent implements OnInit {
 
+  phone: string;
+
   constructor() { }
 
   ngOnInit() {

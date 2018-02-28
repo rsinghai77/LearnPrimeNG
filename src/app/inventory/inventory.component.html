@@ -1,0 +1,8 @@
+<div class="inventory.network">
+  <h2>MCP Network Inventory</h2>
+  <ul class="items">
+    <li *ngFor="let device of devices$ | async">
+      <span class="badge">{{ device.id }}</span>{{ device.name }}
+    </li>
+  </ul>
+</div>
