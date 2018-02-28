@@ -4,7 +4,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 export class Device {
-  constructor(public id: number, public name: string) { }
+  constructor(public id: number, public name: string, public type: string,
+    public vendor: string, public location: string) { }
+
 }
 
 export class Interface {
@@ -20,13 +22,13 @@ export class Server {
 }
 
 const DEVICES = [
-  new Device(101, 'BNG'),
-  new Device(102, 'OLT-1'),
-  new Device(103, 'OLT-2'),
-  new Device(104, 'Channel-Partition'),
-  new Device(105, 'ONU-1'),
-  new Device(106, 'ONU-2'),
-  new Device(107, 'ONU-3')
+  new Device(101, 'BNG-1', 'BNG', 'Juniper', 'Atlanta'),
+  new Device(102, 'OLT-1', 'OLT', 'Adtran', 'Huntsville'),
+  new Device(103, 'OLT-2', 'OLT', 'Adtran', 'Huntsville'),
+  new Device(104, 'Channel-Partition', 'Logical', 'Nokia', 'Boston'),
+  new Device(105, 'ONU-1', 'ONT', 'Adtran', 'Nashville'),
+  new Device(106, 'ONU-2', 'ONT', 'Adtran', 'Nashville'),
+  new Device(107, 'ONU-3', 'ONT', 'Adtran', 'Nashville')
 ];
 
 const INTERFACES = [
