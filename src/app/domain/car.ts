@@ -6,3 +6,10 @@ export interface Car {
     price?;
     saleDate?;
 }
+
+export interface User {
+    name?;
+    username?;
+    email?;
+    website?;
+}

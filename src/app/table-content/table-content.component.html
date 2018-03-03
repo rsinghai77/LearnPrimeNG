@@ -43,3 +43,23 @@
   </p-footer>
 </p-dialog>
 
+<h2>Users from Web Service</h2>
+<h4><a href="https://jsonplaceholder.typicode.com/users/">
+    https://jsonplaceholder.typicode.com/users/
+</a></h4>
+<p-table [columns]="userCols" [value]="users">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
