@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { Car } from '../domain/car';
+import { Car, User } from '../domain/car';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -17,7 +17,6 @@ export class CarService {
 
     getUsers() {
         return this.http.get<any>('https://jsonplaceholder.typicode.com/users/')
-            .toPromise()
-            .then(res => res);
+            .map(res => <User[]> res);
     }
 }

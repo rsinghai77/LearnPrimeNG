@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { Car, User } from '../domain/car';
 import { CarService} from '../services/carservice';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'app-table-content',
@@ -19,18 +20,17 @@ export class TableContentComponent implements OnInit {
     newCar: boolean;
 
     cars: Car[];
+    users$: Observable<User[]>;
 
     cols: any[];
     userCols: any[];
-
-    users: User[];
 
     constructor(private carService: CarService) { }
 
     ngOnInit() {
         this.carService.getCarsSmall().then(cars => this.cars = cars);
 
-        this.carService.getUsers().then(users => this.users = users);
+        this.users$ = this.carService.getUsers();
 
         this.cols = [
             { field: 'vin', header: 'Vin' },

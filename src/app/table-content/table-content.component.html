@@ -1,4 +1,4 @@
-<p-table [columns]="cols" [value]="cars" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="10">
+<p-table [columns]="cols" [value]="cars" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="5">
   <ng-template pTemplate="header" let-columns>
       <tr>
           <th *ngFor="let col of columns">
@@ -47,7 +47,7 @@
 <h4><a href="https://jsonplaceholder.typicode.com/users/">
     https://jsonplaceholder.typicode.com/users/
 </a></h4>
-<p-table [columns]="userCols" [value]="users">
+<p-table [columns]="userCols" [value]="users$ | async" [paginator]="true" rows="5">
     <ng-template pTemplate="header" let-columns>
         <tr>
             <th *ngFor="let col of columns">
