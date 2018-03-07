@@ -9,13 +9,14 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import {TabViewModule} from 'primeng/tabview';
 import {EditorModule} from 'primeng/editor';
+import {InputMaskModule} from 'primeng/inputmask';
 
 import { AppComponent } from './app.component';
 import { TableContentComponent } from './table-content/table-content.component';
 import { InputContentComponent } from './input-content/input-content.component';
 import { TextEditorComponent } from './text-editor/text-editor.component';
 import { InventoryComponent } from './inventory/inventory.component'
-import {InputMaskModule} from 'primeng/inputmask';
+import { MappingComponent } from './mapping/mapping.component'
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import {InputMaskModule} from 'primeng/inputmask';
         TableContentComponent,
         InputContentComponent,
         TextEditorComponent,
-        InventoryComponent
+        InventoryComponent,
+        MappingComponent
     ],
     imports: [
         BrowserModule,
