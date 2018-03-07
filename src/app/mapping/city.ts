@@ -39,11 +39,14 @@ export class City {
     @JsonProperty("keywords", [String])
     keywords: string[] = undefined; // or Array<string>
     
+    @JsonProperty("mayor-name", String)
+    mayorName: string = undefined;
+
     printInfo() {
         if (this.beautiful)
-            console.log(this.name + " was founded in " + this.founded + " and is really beautiful!");
+            console.log(this.name + " was founded in " + this.founded + " and is really beautiful! Mayor is " + this.mayorName);
         else
-            console.log(this.name + " was founded in " + this.founded + ".");
+            console.log(this.name + " was founded in " + this.founded + ". Mayor is " + this.mayorName);
     }
     
 }

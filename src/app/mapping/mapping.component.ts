@@ -8,6 +8,9 @@ import {Country} from "./country";
     styleUrls: ['./mapping.component.css']
 })
 export class MappingComponent implements OnInit {
+
+    message: string;
+
     ngOnInit() {
         // Define a JSON object (could come from a HTTP service, parsed with JSON.parse() if necessary)
         const jsonObject: object = { 
@@ -19,7 +22,8 @@ export class MappingComponent implements OnInit {
                     "founded": -200, 
                     "beautiful": true, 
                     "data": 123,
-                    "keywords": ["Rhine", "River"] 
+                    "keywords": ["Rhine", "River"],
+                    "mayor-name": "Mr. John Doe"
                 },
                 { 
                     "id": 1, 
@@ -27,7 +31,8 @@ export class MappingComponent implements OnInit {
                     "founded": 0, 
                     "beautiful": false, 
                     "data": "no",
-                    "keywords": ["Limmat", "Lake"] 
+                    "keywords": ["Limmat", "Lake"],
+                    "mayor-name": "Ms. Jane XYZ"
                 }
             ]
         };
@@ -44,6 +49,10 @@ export class MappingComponent implements OnInit {
         try {
             country = jsonConvert.deserialize(jsonObject, Country);
             country.cities[0].printInfo(); // prints: Basel was founded in -200 and is really beautiful!
+            country.cities[1].printInfo();
+
+            this.message = JSON.stringify(country.cities);
+
         } catch (e) {
             console.log((<Error>e));
         }
