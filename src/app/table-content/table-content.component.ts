@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Car, User } from '../domain/car';
 import { CarService} from '../services/carservice';
 import { Observable } from 'rxjs/Observable';
+import { Table } from 'primeng/table';
 
 @Component({
     selector: 'app-table-content',
@@ -11,9 +12,13 @@ import { Observable } from 'rxjs/Observable';
 })
 export class TableContentComponent implements OnInit {
 
+    @ViewChild('myTable') myTable: Table;
+
     displayDialog: boolean;
 
     car: Car = new PrimeCar();
+
+    first: number = 0;
 
     selectedCar: Car;
 
@@ -30,7 +35,7 @@ export class TableContentComponent implements OnInit {
     ngOnInit() {
         this.carService.getCarsSmall().then(cars => this.cars = cars);
 
-        this.users$ = this.carService.getUsers();
+        // this.users$ = this.carService.getUsers();
 
         this.cols = [
             { field: 'vin', header: 'Vin' },
@@ -45,6 +50,12 @@ export class TableContentComponent implements OnInit {
             { field: 'email', header: 'Email' },
             { field: 'website', header: 'Website' }
         ];
+    }
+
+
+    paginate(event) {
+        console.log('**** paginate(): EVENT = ' + JSON.stringify(event));
+        this.myTable.rows = 5;
     }
 
     showDialogToAdd() {
